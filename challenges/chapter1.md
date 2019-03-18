@@ -33,14 +33,14 @@ Consider observations stored in `data`.
 
 `@code1`
 ```{python}
+import numpy as np
 data = {{var1}}
-({{func1}}(data))
+print({{_func1}}
 ```
 
 `@pre_challenge_code`
 ```{python}
 import dccpu.generators as g
-import numpy as np
 ```
 
 `@variables`
@@ -48,15 +48,15 @@ import numpy as np
 var1:
 - '!expr g.int_vector(lo=-3, hi=3, sort=True, size=5)'
 func1:
-- 'np.mean'
+- 'np.mean(data)'
 ```
 
 `@distractors`
 ```yaml
 func1:
-- 'np.std'
-- 'np.max'
-- 'np.min'
+- 'np.std(data)'
+- 'np.max(data)'
+- 'np.min(data)'
 ```
 
 ---
@@ -73,14 +73,14 @@ key: 6258197972
 
 `@code1`
 ```{python}
-l1 = {{$l1}}
+l1 = {{l1}}
 p = l1.pop()
 print(np.version.version)
 ```
 
 `@code2`
 ```{python}
-l1 = {{$l1}}
+l1 = {{l1}}
 p = l1.pop({{n}})
 print(p)
 ```
