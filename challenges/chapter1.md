@@ -124,22 +124,9 @@ Consider two related variables `x` and `y`.
 ```{python}
 import numpy as np
 
-x = [1,2,3,4]
-y = [1,2,3,4]
-print(np.polyfit(x, y, 1))
-```
+x = {{$var1}}
+y = {{$var2}}
 
-`@code2`
-```{python}
-x = [0,0,0,0]
-y = [1,2,3,4]
-print(np.polyfit(x, y, 1))
-```
-
-`@code3`
-```{python}
-x = [0,1,2,3]
-y = [1,1,1,1]
 print(np.polyfit(x, y, 1))
 ```
 
@@ -150,7 +137,12 @@ import dccpu.generators as g
 
 `@variables`
 ```yaml
-
+var1:
+- '[1, 2, 3, 4]'
+- '[0, 0, 0, 0]'
+var2:
+- '[1, 2, 3, 4]'
+- '[1, 1, 1, 1]'
 ```
 
 ---
