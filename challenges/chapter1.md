@@ -110,7 +110,7 @@ func1:
 
 ---
 
-## [OC]  Least squares
+## [OC]  Understand np.polyfit
 
 ```yaml
 type: OutputChallenge
@@ -123,27 +123,34 @@ Consider two related variables `x` and `y`.
 `@code1`
 ```{python}
 import numpy as np
-l1 = {{l1}}
-p = l1.pop()
-print(np.version.version)
+
+x = [1,2,3,4]
+y = [1,2,3,4]
+print(np.polyfit(x, y, 1))
 ```
 
 `@code2`
 ```{python}
-l1 = {{l1}}
-p = l1.pop({{n}})
-print(p)
+x = [0,0,0,0]
+y = [1,2,3,4]
+print(np.polyfit(x, y, 1))
+```
+
+`@code3`
+```{python}
+x = [0,1,2,3]
+y = [1,1,1,1]
+print(np.polyfit(x, y, 1))
 ```
 
 `@pre_challenge_code`
 ```{python}
-import numpy as np
+
 ```
 
 `@variables`
 ```yaml
-var1:
-- ''
+
 ```
 
 ---
