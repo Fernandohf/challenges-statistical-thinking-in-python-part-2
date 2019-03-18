@@ -145,7 +145,7 @@ print(np.polyfit(x, y, 1))
 
 `@pre_challenge_code`
 ```{python}
-
+import dccpu.generators as g
 ```
 
 `@variables`
@@ -176,7 +176,7 @@ Consider the picture of Anscombe's quartet and answer.
 - The quartet shows that outliers have little influence in the estimated parameters.
 
 `@options2`
-- In all datasets of the quartet, there is a linear relation between `x` and `y`.
-- [In 3 datasets of the quartet, there is a linear relation between `x` and `y`.]
-- In no dataset of the quartet, there is a linear relation between `x` and `y`.
-- In 2 datasets of the quartet, there is a linear relation between `x` and `y`.
+- In all datasets of the quartet, seems to exist a linear relation between `x` and `y`.
+- [In 3 datasets of the quartet, seems to exist a linear relation between `x` and `y`.]
+- In no dataset of the quartet, seems to exist a linear relation between `x` and `y`.
+- In 2 datasets of the quartet, seems to exist a linear relation between `x` and `y`.
