@@ -3,7 +3,7 @@ title: example_python_challenges
 output: html_document
 ---
 
-## [MC] Choose the right answer
+## [MC] Optimal Parameters
 
 ```yaml
 type: MultipleChoiceChallenge
@@ -11,34 +11,53 @@ key: 115qFYuQ4pPlifqZze0QkDORLwVufanGIfC
 ```
 
 `@assignment1`
-Which command explicitly imports the `pyplot` subpackage from `matplotlib`?
-
-`@assignment2`
-Assuming `matplotlib.pyplot` is imported as `plt`, which command displays the current figure?
-
-`@assignment3`
-Assuming `matplotlib.pyplot` is imported as `plt`, which command clears the current figure?
+Choose the right answer about **Optimal Parameters**.
 
 `@options1`
-- `import matplotlib as pyplot`
-- `import pyplot from matplotlib`
-- [`import matplotlib.pyplot as plt`]
-- `from pyplot import plt`
-- `import pyplot as plt`
+- They are calculated from the observed data.
+- They represent parameters that best approximates the model the actual data.
+- Their relevance depends if the selected model is appropriate for the observed data.
+- [All the alternatives.]
 
-`@options2`
-- `matplotlib.pyplot.show()`
-- `matplotlib.show()`
-- `pyplot.show()`
-- `plt.show`
-- [`plt.show()`]
+---
 
-`@options3`
-- `matplotlib.pyplot.clear()`
-- `plt.clear()`
-- `plt.clf`
-- `plt.clear`
-- [`plt.clf()`]
+## [BC] Applying mean in the observed data
+
+```yaml
+type: BlanksChallenge
+key: 8a565a9166
+```
+
+`@context`
+Consider observations stored in `data`.
+
+`@code1`
+```{python}
+data = {{var1}}
+({{func1}}(data))
+```
+
+`@pre_challenge_code`
+```{python}
+import dccpu.generators as g
+import numpy as np
+```
+
+`@variables`
+```yaml
+var1:
+- '!expr g.int_vector(lo=-3, hi=3, sort=True, size=5)'
+func1:
+- 'np.mean'
+```
+
+`@distractors`
+```yaml
+func1:
+- 'np.std'
+- 'np.max'
+- 'np.min'
+```
 
 ---
 
@@ -56,7 +75,7 @@ key: 6258197972
 ```{python}
 l1 = {{$l1}}
 p = l1.pop()
-print(p)
+print(np.version.version)
 ```
 
 `@code2`
@@ -69,6 +88,7 @@ print(p)
 `@pre_challenge_code`
 ```{python}
 import dccpu.generators as g
+import numpy as np
 ```
 
 `@variables`
@@ -77,45 +97,4 @@ l1:
 - '!expr g.int_vector(size=6)'
 n:
 - '!expr g.rand_int(hi=5)'
-```
-
----
-
-## [BC] concatenating lists
-
-```yaml
-type: BlanksChallenge
-key: 8a565a9166
-```
-
-`@context`
-
-
-`@code1`
-```{python}
-l1 = {{l1}}
-l2 = {{l2}}
-print(l1 {{_op}} l2)
-```
-
-`@pre_challenge_code`
-```{python}
-import dccpu.generators as g
-```
-
-`@variables`
-```yaml
-l1:
-- '!expr g.int_vector(size=3)'
-l2:
-- '!expr g.int_vector(size=3)'
-op:
-- '+'
-```
-
-`@distractors`
-```yaml
-op:
-- '-'
-- '*'
 ```
