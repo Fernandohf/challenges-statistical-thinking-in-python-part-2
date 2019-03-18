@@ -35,7 +35,7 @@ Consider observations stored in `data`.
 ```{python}
 import numpy as np
 data = {{var1}}
-print({{_func1}}
+{{_func1}}(data)
 ```
 
 `@pre_challenge_code`
@@ -48,15 +48,15 @@ import dccpu.generators as g
 var1:
 - '!expr g.int_vector(lo=-3, hi=3, sort=True, size=5)'
 func1:
-- 'np.mean(data)'
+- 'np.mean'
 ```
 
 `@distractors`
 ```yaml
 func1:
-- 'np.std(data)'
-- 'np.max(data)'
-- 'np.min(data)'
+- 'np.std'
+- 'np.max'
+- 'np.min'
 ```
 
 ---
