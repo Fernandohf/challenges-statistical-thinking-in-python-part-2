@@ -21,7 +21,7 @@ Choose the right answer about **Optimal Parameters**.
 
 ---
 
-## [BC] Applying mean in the observed data
+## [BC] Calculating optimal parameters directly from data
 
 ```yaml
 type: BlanksChallenge
@@ -29,34 +29,42 @@ key: 8a565a9166
 ```
 
 `@context`
-Consider observations stored in `data`.
+Consider observations of a normally distributed variable stored in `data`. Calculate its optimal parameters.
 
 `@code1`
 ```{python}
 import numpy as np
-data = {{var1}}
-{{_func1}}(data)
+print({{_func1}}(data), {{_func2}}(data))
 ```
 
 `@pre_challenge_code`
 ```{python}
 import dccpu.generators as g
+
+data = list(range(100))
 ```
 
 `@variables`
 ```yaml
 var1:
-- '!expr g.int_vector(lo=-3, hi=3, sort=True, size=5)'
+- '!expr g.int_vector(lo=-3, hi=3, sort=True, size=4)'
 func1:
 - 'np.mean'
+func2:
+- 'np.std'
 ```
 
 `@distractors`
 ```yaml
 func1:
-- 'np.std'
+- 'np.avg'
 - 'np.max'
 - 'np.min'
+- 'np.median'
+func1:
+- 'np.standard'
+- 'np.devi'
+- 'np.confidence'
 ```
 
 ---
