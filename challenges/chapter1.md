@@ -41,8 +41,6 @@ print(mu, sigma)
 
 `@pre_challenge_code`
 ```{python}
-import dccpu.generators as g
-
 data = [-1,-1,-2, 0,0,0,0,0,0,1,1,2]
 ```
 
@@ -92,8 +90,6 @@ samples = {{_func1}}(mean, std, size=10000)
 
 `@pre_challenge_code`
 ```{python}
-import dccpu.generators as g
-
 data = list(range(100))
 ```
 
@@ -150,3 +146,15 @@ l1:
 n:
 - '!expr g.rand_int(hi=5)'
 ```
+
+---
+
+## Insert challenge title here
+
+```yaml
+type: MultipleChoiceChallenge
+key: ea4062f9a4
+```
+
+`@assignment1`
+Regarding Anscombe's quartet, choose the right answer.
