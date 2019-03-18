@@ -21,7 +21,7 @@ Choose the right answer about **Optimal Parameters**.
 
 ---
 
-## [BC] Calculating optimal parameters directly from data
+## [BC] Calculating optimal parameters for normal distributions
 
 ```yaml
 type: BlanksChallenge
@@ -29,25 +29,25 @@ key: 8a565a9166
 ```
 
 `@context`
-Consider observations of a normally distributed variable stored in `data`. Calculate its optimal parameters.
+Consider observations of a normally distributed variable stored in `data` with optimal parameters `0` and `1`.
 
 `@code1`
 ```{python}
 import numpy as np
-print({{_func1}}(data), {{_func2}}(data))
+mu = {{_func1}}(data)
+sigma = {{_func2}}(data)
+print(mu, sigma)
 ```
 
 `@pre_challenge_code`
 ```{python}
 import dccpu.generators as g
 
-data = list(range(100))
+data = [-1,-1,-2, 0,0,0,0,0,0,1,1,2]
 ```
 
 `@variables`
 ```yaml
-var1:
-- '!expr g.int_vector(lo=-3, hi=3, sort=True, size=4)'
 func1:
 - 'np.mean'
 func2:
@@ -61,10 +61,54 @@ func1:
 - 'np.max'
 - 'np.min'
 - 'np.median'
-func1:
+func2:
 - 'np.standard'
 - 'np.devi'
 - 'np.confidence'
+```
+
+---
+
+## [BC] Checking theoretical distribution
+
+```yaml
+type: BlanksChallenge
+key: 77ac115e68
+```
+
+`@context`
+Consider observations of a normally distributed variable stored in `data`. Repeat the steps to calculate samples from the theoretical distribution with optimal parameters.
+
+`@code1`
+```{python}
+import numpy as np
+
+mean = np.mean(data)
+std = np.std(data)
+
+samples = {{_func1}}(mean, std, size=10000)
+(np.mean(samples) - np.mean(data)) < 0.01
+```
+
+`@pre_challenge_code`
+```{python}
+import dccpu.generators as g
+
+data = list(range(100))
+```
+
+`@variables`
+```yaml
+func1:
+- 'np.random.normal'
+```
+
+`@distractors`
+```yaml
+func1:
+- 'np.normal'
+- 'np.random.gaussian'
+- 'np.random.exponential'
 ```
 
 ---
