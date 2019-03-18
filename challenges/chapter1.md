@@ -150,7 +150,7 @@ n:
 
 ---
 
-## Insert challenge title here
+## [MC] Anscoimbe's Quartet
 
 ```yaml
 type: MultipleChoiceChallenge
