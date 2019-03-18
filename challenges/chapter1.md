@@ -110,7 +110,7 @@ func1:
 
 ---
 
-## [OC] popping lists
+## [OC]  Least squares
 
 ```yaml
 type: OutputChallenge
@@ -118,10 +118,11 @@ key: 6258197972
 ```
 
 `@context`
-
+Consider two related variables `x` and `y`.
 
 `@code1`
 ```{python}
+import numpy as np
 l1 = {{l1}}
 p = l1.pop()
 print(np.version.version)
@@ -136,16 +137,13 @@ print(p)
 
 `@pre_challenge_code`
 ```{python}
-
 import numpy as np
 ```
 
 `@variables`
 ```yaml
-l1:
-- '!expr g.int_vector(size=6)'
-n:
-- '!expr g.rand_int(hi=5)'
+var1:
+- ''
 ```
 
 ---
@@ -160,8 +158,18 @@ key: ea4062f9a4
 `@assignment1`
 Regarding Anscombe's quartet, choose the right answer.
 
+`@assignment2`
+Consider the picture of Anscombe's quartet and answer.
+![quartet](https://assets.datacamp.com/production/repositories/4790/datasets/88543fe1a3c06b0a4376241f29c82ff083eaf589/anscombes_quartet.png "Anscombe's quartet")
+
 `@options1`
 - The quartet shows that only descriptive statistics can fully represent a dataset.
 - The quartet shows that graphical EDA is a waste of time. 
 - [None of the alternatives]
 - The quartet shows that outliers have little influence in the estimated parameters.
+
+`@options2`
+- In all datasets of the quartet, there is a linear relation between `x` and `y`.
+- [In 3 datasets of the quartet, there is a linear relation between `x` and `y`.]
+- In no dataset of the quartet, there is a linear relation between `x` and `y`.
+- In 2 datasets of the quartet, there is a linear relation between `x` and `y`.
