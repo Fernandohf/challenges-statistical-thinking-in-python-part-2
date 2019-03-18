@@ -1,6 +1,7 @@
 ---
-title: example_python_challenges
+title: ' Parameter estimation by optimization'
 output: html_document
+description: ""
 ---
 
 ## [MC] Optimal Parameters
@@ -158,3 +159,9 @@ key: ea4062f9a4
 
 `@assignment1`
 Regarding Anscombe's quartet, choose the right answer.
+
+`@options1`
+- The quartet shows that only descriptive statistics can fully represent a dataset.
+- The quartet shows that graphical EDA is a waste of time. 
+- [None of the alternatives]
+- The quartet shows that outliers have little influence in the estimated parameters.
