@@ -110,7 +110,7 @@ func1:
 
 ---
 
-## [OC]  Understand np.polyfit
+## [OC]  Understand np.polyfit output
 
 ```yaml
 type: OutputChallenge
@@ -124,26 +124,68 @@ Consider two related variables `x` and `y`.
 ```{python}
 import numpy as np
 
-x = {{$var1}}
-y = {{$var2}}
+x = {{var1}}
+y = {{var2}}
 
 print(np.polyfit(x, y, 1))
 ```
 
 `@pre_challenge_code`
 ```{python}
-import dccpu.generators as g
+
 ```
 
 `@variables`
 ```yaml
 var1:
-- '[1, 2, 3, 4]'
+- '[1., 2., 3., 4.]'
 var2:
-- '[1, 2, 3, 4]'
-- '[1, 1, 1, 1]'
-- '[0, 0, 0, 0]'
-- '[2, 2, 2, 2]'
+- '[1., 2., 3., 4.]'
+- '[1., 1., 1., 1.]'
+- '[0., 0., 0., 0.]'
+- '[2., 2., 2., 2.]'
+```
+
+---
+
+## [OC] Create a line with np.polyfit
+
+```yaml
+type: OutputChallenge
+key: 3ca2c3b03e
+```
+
+`@context`
+Consider two related variables `x` and `y`.
+
+`@code1`
+```{python}
+import numpy as np
+
+x = {{var1}}
+y = {{var2}}
+
+slope, intercept = np.polyfit(x, y, 1)
+
+line_x = np.linspace(1, 4, 4)
+line_y = line_x * slope + intercept
+print(line_y)
+```
+
+`@pre_challenge_code`
+```{python}
+
+```
+
+`@variables`
+```yaml
+var1:
+- '[1, 2, 3 ,4]'
+var2: 
+- '[1, 2, 3 ,4]'
+- '[2, 4, 6 ,8]'
+- '[1, 1, 1 ,1]'
+- '[0, 0, 0 ,0]'
 ```
 
 ---
